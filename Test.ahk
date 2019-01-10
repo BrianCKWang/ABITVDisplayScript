@@ -4,11 +4,16 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;Haystack := "E:\Brian\Projects\Project 37 - Shop Powerpoint Auto update\PowerPoint\Script"
-Haystack = %A_WorkingDir%
-Needle := "[^\\]+$"       ;Match all characters that are not a "/" starting from the end of the haystack
+;Haystack = %A_WorkingDir%
+;Needle := "[^\\]+$"       ;Match all characters that are not a "/" starting from the end of the haystack
 
-RegExMatch(Haystack, Needle, Match)
+;RegExMatch(Haystack, Needle, Match)
 
-StringTrimRight, OutputVar, Haystack, StrLen(Match)
+;StringTrimRight, OutputVar, Haystack, StrLen(Match)
 
-MsgBox    %    OutputVar
+;MsgBox    %    OutputVar
+Name = %A_ComputerName% 
+if(A_ComputerName  == "ABI-LAP18")
+{
+	MsgBox This is %Name%
+}

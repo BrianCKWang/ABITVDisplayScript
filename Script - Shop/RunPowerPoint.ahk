@@ -3,21 +3,21 @@ Needle := "[^\\]+$"       ;Match all characters that are not a "/" starting from
 RegExMatch(Haystack, Needle, Match)
 StringTrimRight, ParentPath, Haystack, StrLen(Match)
 Loop{
-	FileGetSize, FileSize_Now, %ParentPath%\PowerPoint\History.txt
+	FileGetSize, FileSize_Now, %ParentPath%\Shop Display\History.txt
 	;msgbox %FileSize_Now%
 	if FileSize_Now <> %FileSize_Last%
 	{
-		IfWinExist, PowerPoint Slide Show - [TV Slideshow.pps]		; Title of the prog
+		IfWinExist, PowerPoint Slide Show - [Shop TV Slideshow.pps]		; Title of the prog
 		{
 			WinActivate
 			WinClose
 		}
-
-		FileDelete, %A_ScriptDir%\TV Slideshow.pps
-		FileCopy, %ParentPath%\PowerPoint\TV Slideshow.pps, %A_ScriptDir%\TV Slideshow.pps, %DoOverwrite%
+		WinWaitClose PowerPoint Slide Show - [Shop TV Slideshow.pps]
+		FileDelete, %A_ScriptDir%\Shop TV Slideshow.pps
+		FileCopy, %ParentPath%\Shop Display\Shop TV Slideshow.pps, %A_ScriptDir%\Shop TV Slideshow.pps, %DoOverwrite%
 		
 		sleep 500
-		Run, TV Slideshow.pps,,, WinPid
+		Run, Shop TV Slideshow.pps,,, WinPid
 		WinWaitActive, Ahk_pid %WinPid%
 		sleep 500
 		Send {F5}
