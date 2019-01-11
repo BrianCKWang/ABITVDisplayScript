@@ -4,13 +4,13 @@ RegExMatch(Haystack, Needle, Match)
 StringTrimRight, ParentPath, Haystack, StrLen(Match)
 if(A_ComputerName = "ABI-DT31")	;shop display
 {
-	PathName = Shop Display
+	PathName = ShopDisplay
 	FileName = Shop TV Slideshow.pps
 	ComputerFound := True
 }
-else if(A_ComputerName = "ABI-DT32")	;Office display
+else if(A_ComputerName = "ABI-DT32")	;Engineering Office display
 {
-	PathName = Office Display
+	PathName = EngOfficeDisplay
 	FileName = Office TV Slideshow.pps
 	ComputerFound := True
 }
