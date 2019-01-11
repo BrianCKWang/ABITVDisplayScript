@@ -42,6 +42,11 @@ if(ComputerFound = True)
 				sleep 200
 				Run, %FileName%,,, WinPid
 			}
+			IfWinExist, Sponsored session		; Title of the prog
+			{
+				WinActivate
+				Send {Enter}
+			}
 			sleep 500
 		}
 		FileSize_Last = %FileSize_Now%
