@@ -5,13 +5,13 @@ StringTrimRight, ParentPath, Haystack, StrLen(Match)
 if(A_ComputerName = "ABI-DT31")	;shop display
 {
 	PathName = ShopDisplay
-	FileName = Shop TV Slideshow.pps
+	FileName = ShopSlideshow.pps
 	ComputerFound := True
 }
 else if(A_ComputerName = "ABI-DT32")	;Engineering Office display
 {
 	PathName = EngOfficeDisplay
-	FileName = Office TV Slideshow.pps
+	FileName = EngOfficeSlideshow.pps
 	ComputerFound := True
 }
 else
